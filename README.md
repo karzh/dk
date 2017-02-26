@@ -47,3 +47,38 @@ Status](https://travis-ci.org/linsomniac/python-memcached.svg)](https://github.c
 		```
 		QPS:10w (50+ redis slave cluster,consistent hash key )   		
 * ABtest	
+	* not average  		
+		* * divid by uuid (user uniq id )
+		* * divid by random 	
+		*  divid by user_define (like ip, some stable factors  )
+	* average 
+		* * divid by server_session_id(inc by server ) 	 
+	all ABtest callback is based cookie , on the other handle ,if cookie is cleared suddenly ,ABtest disappear  	
+	 
+## Overview
+DK is a shorted name for donkey_proxy, which is scripted by  nginx +lua ,DK is aimed at branching mycompany's HTTP requests into diff cluster . while mime request look like so much common ,but few diff in urlPatter. 
+
+This software is a 100% Lua interface to the IO or  memory cache
+daemon.  It is the HTTPPROXY side software which listening 80 +443 port 
+in one or more, possibly redis ,memcached . for more information please contact us  
+
+Please report issues and submit code changes to the github repository at:
+
+	https://github.com/gjpicker/dk.git
+
+## Depend
+```
+tengine
+luajit
+luarocks
+luarocks install lrexlib-PCRE
+luarocks install luasocket
+luarocks install lua-cjson
+lua-resty-memcached
+```
+## Testing
+
+Test patches locally and easily by running lua cli:
+
+    cd nginx/lua/data
+    lua check.lua
