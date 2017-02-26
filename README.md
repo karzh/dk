@@ -75,6 +75,7 @@ luarocks install lrexlib-PCRE
 luarocks install luasocket
 luarocks install lua-cjson
 lua-resty-memcached
+lua-resty-redis
 ```
 ## Testing
 
