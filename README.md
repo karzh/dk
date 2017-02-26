@@ -27,16 +27,18 @@ Status](https://travis-ci.org/linsomniac/python-memcached.svg)](https://github.c
  		```	
    * XSS+CRLF
    		* httpmethod==GET (path+querystring)
-   		  ```
+   
+   	```
+	//crlf
         str.replace("\r\n")||str.replace(url_encode("\r\n"))
-        ``` 
-		  ```
+     
+     	//xss
         XssPattern='/>\w*[^>]*?[\"|\']>\w*[^>]*?/i';
 				if reg_match 
 					foreach (querstring :item) 
 							earse (xss)
-					build new querystring					upstream
-			```
+					build new querystring	and upstream backend
+	```
 	* cookie
 	
 		cookie is defined machine automatic ,mustn't be defined by develper , some dev-cookie is store in redis .
@@ -49,9 +51,9 @@ Status](https://travis-ci.org/linsomniac/python-memcached.svg)](https://github.c
 * ABtest	
 	* not average  		
 		* * divid by uuid (user uniq id )
-		* * divid by random 	
-		*  divid by user_define (like ip, some stable factors  )
+		*  divid by user_define (like ip, city ,hot url ,other stable factors  )
 	* average 
+		* * divid by random 	
 		* * divid by server_session_id(inc by server ) 	 
 	all ABtest callback is based cookie , on the other handle ,if cookie is cleared suddenly ,ABtest disappear  	
 	 
